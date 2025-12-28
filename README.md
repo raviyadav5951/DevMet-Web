@@ -14,3 +14,12 @@ The React Compiler is not enabled on this template because of its impact on dev 
 ## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+## Redux toolkit
+- Configure store, create slice -> add reducers in each slice. 
+- Now add those reducer methods into store and export reducers as non-default export.
+- Export default the store and import the complete slice into store.
+- To listen for the store update, useSelector and pass slice name to observe changes.
+- Redux toolkit : https://redux-toolkit.js.org/
+
+
