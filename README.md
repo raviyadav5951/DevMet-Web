@@ -27,4 +27,5 @@ If you are developing a production application, we recommend using TypeScript wi
 - This will keep the user on login page even if you refresh the page
 - Redirect user to login page if token not present
 - Restrict calling the /profile api everytime you change the pages.
+- Logout : clear token, clear user store and navigate to login
 

@@ -6,6 +6,7 @@ import { useNavigate } from "react-router";
 import { API_LOGIN, BASE_URL } from "../utils/constants";
 
 const Login = () => {
+  const [error, setError] = useState(null);
   const [emailId, setEmailId] = useState("sachin@gmail.com");
   const [password, setPassword] = useState("Test@123");
   const navigate = useNavigate();
@@ -20,7 +21,7 @@ const Login = () => {
           emailId,
           password,
         },
-        { withCredentials: true }
+        { withCredentials: true },
       );
 
       disptach(addUser(res.data));
@@ -28,7 +29,8 @@ const Login = () => {
       //console.log("Sign-in response:", res.data);
       return navigate("/");
     } catch (error) {
-      console.log("Error during sign-in:", error);
+      console.log("Error during sign-in:", error?.response?.data?.message ||'Something went wrong');
+      setError(error.response.data.message); // Error message from catch block)
     }
   };
 
@@ -59,7 +61,7 @@ const Login = () => {
               }}
             />
           </fieldset>
-
+          <p className="text-red-500">{error}</p>
           <div className="card-actions">
             <button className="btn btn-primary" onClick={handleSignIn}>
               Login
