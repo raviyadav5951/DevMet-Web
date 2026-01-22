@@ -22,4 +22,9 @@ If you are developing a production application, we recommend using TypeScript wi
 - To listen for the store update, useSelector and pass slice name to observe changes.
 - Redux toolkit : https://redux-toolkit.js.org/
 
+## Ep3:
+- On refresh , page is getting logout. To restore this fetch the user and if token is present => get profile of user and save it in slice
+- This will keep the user on login page even if you refresh the page
+- Redirect user to login page if token not present
+- Restrict calling the /profile api everytime you change the pages.
 

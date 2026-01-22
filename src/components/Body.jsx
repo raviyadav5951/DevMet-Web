@@ -1,8 +1,9 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import NavBar from "./NavBar";
 import { Outlet, useNavigate } from "react-router";
 import Footer from "./Footer";
 import axios from "axios";
-import { BASE_URL } from "../utils/constants";
+import { API_PROFILE_VIEW, BASE_URL } from "../utils/constants";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addUser } from "../store/userSlice";
@@ -15,7 +16,7 @@ const Body = () => {
   const fetchUser = async () => {
     if(userData) return;
     try {
-      const res = await axios.get(BASE_URL + "/profile/view", {
+      const res = await axios.get(BASE_URL + API_PROFILE_VIEW, {
         withCredentials: true,
       });
       dispatch(addUser(res.data));
